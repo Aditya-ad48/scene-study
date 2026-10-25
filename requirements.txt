@@ -1,0 +1,6 @@
+fastapi>=0.115,<1
+uvicorn>=0.30,<1
+python-multipart>=0.0.9,<1
+sarvamai>=0.1.0
+pypdf>=5,<7
+python-dotenv>=1,<2

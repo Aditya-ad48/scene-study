@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111513">
+  <title>Scene Study — Your AI acting coach</title>
+  <meta name="description" content="Practice a scene, get specific acting direction, and hear the difference.">
+  <link rel="stylesheet" href="/static/styles.css">
+  <script defer src="/static/app.js"></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Scene Study home"><span class="brand-mark">✳</span><span>SCENE <strong>STUDY</strong></span></a>
+    <span class="header-note"><span class="live-dot"></span> Your rehearsal space</span>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">THE ACTOR'S PRACTICE ROOM <span class="eyebrow-rule"></span> SARVAM AI</p>
+        <h1>Find the truth<br><em>in every line.</em></h1>
+        <p class="hero-text">Give your character a little history. Speak or type a line. Get clear direction, then hear how a different delivery can change the scene.</p>
+        <div class="hero-tags"><span>01 &nbsp; Build the role</span><span>02 &nbsp; Perform</span><span>03 &nbsp; Refine</span></div>
+      </div>
+      <div class="hero-card" aria-hidden="true">
+        <span class="card-corner top-left"></span><span class="card-corner top-right"></span><span class="card-corner bottom-left"></span><span class="card-corner bottom-right"></span>
+        <div class="hero-card-inner"><span class="hero-card-kicker">TONIGHT'S REHEARSAL</span><div class="quotation">“</div><p>The most powerful line<br>is the one you <em>mean.</em></p><div class="waveform"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="hero-card-foot">MIC ON · CHARACTER READY</span></div>
+      </div>
+    </section>
+
+    <div class="workspace-heading"><div><p class="eyebrow">THE WORKSPACE</p><h2>Your scene, step by step.</h2></div><span class="session-pill">SESSION 01 <span class="pill-dot"></span> IN PROGRESS</span></div>
+
+    <section class="panel" id="character-section" aria-labelledby="character-title">
+      <div class="panel-index">01</div>
+      <div class="panel-body"><div class="section-head"><div><p class="section-kicker">SET THE SCENE</p><h3 id="character-title">Who are you playing?</h3><p>Tell us what drives this person. The more specific you are, the more useful the direction.</p></div><span class="section-icon">✧</span></div>
+        <label for="character">Character & scene notes</label>
+        <textarea id="character" rows="5" placeholder="Example: Mira is a detective who appears calm, but she's afraid her partner has discovered her secret. In this scene, she's trying to keep control without giving herself away."></textarea>
+        <div class="field-footer"><span>Personality, stakes, relationships, hidden motives...</span><span id="character-count">0 / 6000</span></div>
+        <div class="upload-row"><label class="upload-button" for="sketch"><span>＋</span> Add a character sketch</label><input id="sketch" type="file" accept=".pdf,.png,.jpg,.jpeg,application/pdf,image/png,image/jpeg"><span class="upload-hint">PDF, PNG or JPG · up to 8 MB</span></div>
+        <div id="sketch-result" class="sketch-result hidden" aria-live="polite"><div class="sketch-top"><span>UPLOADED CONTEXT</span><button type="button" id="remove-sketch" class="text-button">Remove</button></div><strong id="sketch-name"></strong><p id="sketch-text"></p></div>
+      </div>
+    </section>
+
+    <section class="panel" id="dialogue-section" aria-labelledby="dialogue-title">
+      <div class="panel-index">02</div>
+      <div class="panel-body"><div class="section-head"><div><p class="section-kicker">STEP INTO THE ROLE</p><h3 id="dialogue-title">Give us your line.</h3><p>Record a short performance or type the dialogue. You can edit a transcript before asking for feedback.</p></div><span class="section-icon mic-icon">◉</span></div>
+        <div class="record-area"><button id="record-button" type="button" class="record-button"><span class="record-symbol"></span><span id="record-label">Start recording</span></button><span id="record-status" class="record-status">Best for a line under 30 seconds</span><span id="record-timer" class="record-timer">00:00</span></div>
+        <div id="recording-preview" class="recording-preview hidden"><span class="audio-label">YOUR TAKE</span><audio id="recorded-audio" controls preload="metadata"></audio><button id="discard-recording" type="button" class="text-button">Discard</button></div>
+        <div class="or-divider"><span>OR WRITE THE LINE</span></div>
+        <label for="dialogue">Dialogue <span class="label-note">· transcript is editable</span></label>
+        <textarea id="dialogue" rows="4" placeholder="I told you not to come back here. So why did you?"></textarea>
+        <div class="field-footer"><span id="transcript-note">Your words stay yours. We suggest a delivery, not a rewrite.</span><span id="dialogue-count">0 / 2500</span></div>
+        <div class="language-row"><label for="language">Voice demo language</label><select id="language"><option value="en-IN">English</option><option value="hi-IN">Hindi</option><option value="bn-IN">Bengali</option><option value="ta-IN">Tamil</option><option value="te-IN">Telugu</option><option value="gu-IN">Gujarati</option><option value="kn-IN">Kannada</option><option value="ml-IN">Malayalam</option><option value="mr-IN">Marathi</option><option value="pa-IN">Punjabi</option><option value="od-IN">Odia</option></select></div>
+        <div class="action-row"><button id="feedback-button" type="button" class="primary-button">Get acting direction <span>↗</span></button><span class="action-note">A thoughtful take, in a few moments.</span></div>
+      </div>
+    </section>
+
+    <section class="results hidden" id="results" aria-live="polite"><div class="results-header"><div><p class="eyebrow">YOUR COACH'S NOTES</p><h2>Let's work the scene.</h2></div><span class="results-badge">PERSONALIZED DIRECTION</span></div>
+      <div class="insight-grid"><article class="insight-card featured"><p class="insight-label">CHARACTER INTERPRETATION</p><p id="interpretation"></p><span class="insight-rule"></span><p class="insight-label">UNDER THE WORDS</p><p id="subtext"></p></article><article class="insight-card"><p class="insight-label">EMOTIONAL CURRENT</p><p id="emotion"></p><span class="insight-rule"></span><p class="insight-label">WHAT ALREADY WORKS</p><p id="strengths"></p></article></div>
+      <div class="direction-card"><div class="direction-heading"><span class="direction-glyph">✳</span><div><p class="insight-label">THE DIRECTION</p><h3 id="delivery"></h3></div></div><ol id="adjustments"></ol><div class="direction-meta"><div><span>WORDS TO LAND</span><p id="emphasis"></p></div><div><span>LET IT BREATHE</span><p id="pauses"></p></div></div></div>
+      <div class="reference-section"><div class="subhead"><div><p class="eyebrow">FIND YOUR REFERENCES</p><h3>Characters worth watching</h3></div><p>Study the choices. Make them your own.</p></div><div id="recommendations" class="references"></div></div>
+      <div class="comparison-section"><div class="subhead"><div><p class="eyebrow">THE A / B MOMENT</p><h3>Listen to the difference.</h3></div><p>One line. Two ways in.</p></div><div class="comparison-grid"><article class="listen-card original"><div class="listen-heading"><span class="listen-number">A</span><div><span>FIRST TAKE</span><h4>Your original</h4></div></div><p id="original-copy" class="spoken-copy"></p><audio id="original-player" controls></audio><p id="original-caption" class="listen-caption"></p></article><article class="listen-card improved"><div class="listen-heading"><span class="listen-number">B</span><div><span>REFERENCE TAKE</span><h4>A different approach</h4></div></div><p id="improved-copy" class="spoken-copy"></p><audio id="improved-player" controls></audio><p class="listen-caption">Sarvam AI voice reference · interpretation may vary</p></article></div><div class="change-summary"><span>WHAT CHANGED</span><p id="change-summary"></p></div></div>
+      <div class="practice-bar"><div><p class="eyebrow">ONE MORE TAKE?</p><h3>Try it with the new intention.</h3><p>Your character notes stay here while you practice.</p></div><button id="practice-again" type="button" class="secondary-button">Record another take <span>↗</span></button></div>
+    </section>
+    <div id="notice" class="notice hidden" role="status"></div>
+  </main>
+  <footer><span>✳ &nbsp; SCENE STUDY</span><span>Practice with intention. Perform with truth.</span><span>POWERED BY SARVAM AI</span></footer>
+</body>
+</html>
